@@ -22,7 +22,7 @@ extern keymap_config_t keymap_config;
 enum planck_layers {
   _QWERTY,
   _RAISE,
-  _FUNC,
+  _CODE,
   _GAME
 };
 
@@ -36,7 +36,7 @@ enum planck_keycodes {
 };
 
 #define RAISE MO(_RAISE)
-#define FUNC TT(_FUNC)
+#define CODE TT(_CODE)
 #define GAME TG(_GAME)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -54,10 +54,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_QWERTY] = LAYOUT_planck_grid(
     KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC,
-    FUNC,    KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
+    CODE,    KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
     KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_BSLS,
-    KC_LCTL, KC_LALT, KC_LGUI, KC_NO,   KC_NO,   KC_ENT,  KC_SPC,  RAISE,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
-)
+    KC_LCTL, KC_LALT, KC_LALT, KC_LGUI, KC_LCTL, KC_ENT,  KC_SPC,  RAISE,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
+),
 
 /* Raise
  * ,-----------------------------------------------------------------------------------.
@@ -88,7 +88,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |      |      |      |      |      |             |      | Mute | Vol- | Vol+ | Caps |
  * `-----------------------------------------------------------------------------------'
  */
-[_FUNC] = LAYOUT_planck_grid(
+[_CODE] = LAYOUT_planck_grid(
     KC_ESC,  KC_HOME, KC_UP,   KC_END,  KC_PGUP, _______, KC_MINS, KC_EQL,  KC_PLUS, KC_LPRN, KC_RPRN, _______,
     _______, KC_LEFT, KC_DOWN, KC_RGHT, KC_PGDN, _______, KC_UNDS, KC_LBRC, KC_RBRC, KC_LCBR, KC_RCBR, _______,
     _______, KC_SLCK, KC_PAUS, KC_INS,  _______, _______, KC_GRV,  KC_TILD, KC_LT,   KC_GT,   _______, KC_DEL ,
@@ -107,9 +107,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_GAME] = LAYOUT_planck_grid(
-    KC_ESC,   KC_1,    KC_2,    KC_3,    KC_4,     KC_5,    KC_6, _______, _______, _______, _______, _______,
-    KC_TAB,   KC_Q,    KC_W,    KC_E,    KC_R,     KC_T,    KC_Y, _______, _______, _______, _______, _______,
-    KC_LSFT,  KC_A,    KC_S,    KC_D,    KC_F,     KC_G,    KC_H, _______, _______, _______, _______, _______,
-    KC_LCTL,  KC_Z,    KC_X,    KC_C,    KC_SPC,   KC_B,    KC_N, _______, _______, _______, _______, _______
+    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+    KC_ESC,  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+    _______, KC_1,    KC_2,    KC_3,    KC_4,    KC_SPC,  _______, _______, _______, _______, _______, _______
 ),
 };
